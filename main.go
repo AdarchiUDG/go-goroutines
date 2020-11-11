@@ -21,7 +21,7 @@ func (p *Process) Start(id uint64) {
 				case <- p.End:
 					return
 				case show = <- p.Signal:
-					
+
 				default:
 					if show {
 						fmt.Println(id, ":", i)
@@ -78,7 +78,8 @@ func main() {
 					p.Show()
 				}
 				fmt.Scanln()	
-				for _, p := range processes {
+				for k, p := range processes {
+					fmt.Println(k)
 					p.Hide()
 				}
 			case 3:
@@ -87,6 +88,7 @@ func main() {
 				fmt.Scanln()
 				if (id < lastId) {
 					processes[id].Stop()
+					fmt.Println("Se elimino el proceso", id)
 				}
 			case 0:
 				return
