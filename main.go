@@ -78,7 +78,7 @@ func main() {
 					p.Show()
 				}
 				fmt.Scanln()	
-				for k, p := range processes {
+				for _, p := range processes {
 					p.Hide()
 				}
 			case 3:
