@@ -79,7 +79,6 @@ func main() {
 				}
 				fmt.Scanln()	
 				for k, p := range processes {
-					fmt.Println(k)
 					p.Hide()
 				}
 			case 3:
